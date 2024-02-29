@@ -40,7 +40,7 @@ p.show()
 //func setName(name:String, age:Int){
 //func setName(name:String,myAge age:Int){
 func setName(name: String, age: Int) {
-    
+    print("zhuzj \(name) + \(age)")
 }
 // 实例方法和函数的区别在于, 实例方法会自动将除第一个参数以外的其他参数既当做为外部参数又当做内部参数, 而函数需要我们自己指定才会有外部参数, 默认没有
 setName(name: "han", age: 30)
@@ -139,5 +139,20 @@ var p4 = Person4()
 p4.show()
 Person4.staticShow()
 
-
-
+class Person5 {
+    var name: String = "HanJunqiang"
+    static var card: String = "1234567"
+    func show()
+    {
+        print("name = \(name) card = \(Person4.card)")
+    }
+    class func staticShow()
+    {
+        //类方法中没有self
+        //静态方法对应OC中的+号方法, 和OC一样在类方法中不能访问非静态属性
+        print("card = \(Person4.card)")
+    }
+}
+var p5 = Person5()
+p5.show()
+Person5.staticShow()

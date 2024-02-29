@@ -12,7 +12,7 @@ import Foundation
  * 封装: 通常把隐藏属性,方法和方法实现细节的过程称为封装
  
  1.隐藏属性和方法
- 使访问控制修饰符将类和其他属性方法封装起来, 常用的有: public, internal, private
+ 用访问控制修饰符将类和其他属性方法封装起来, 常用的有: public, internal, private
  
  public:   从外部模块和本模块都能访问;
  internal: 只有本模块能访问;
@@ -24,7 +24,7 @@ public class Student {
     internal var age : Int
     private var score : Int
     
-    init(name : String,age : Int,score : Int) {
+    init(name : String, age : Int, score : Int) {
         self.age = age
         self.name = name
         self.score = score
@@ -62,7 +62,7 @@ class Cat: Animal {
 
 class Dog: Animal {
     override func say() {
-        print("够叫")
+        print("狗叫")
     }
 }
 

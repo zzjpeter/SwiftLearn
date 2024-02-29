@@ -22,21 +22,21 @@ import Foundation
  */
 
 // key一定要是可以hash的(String, Int, Double, Bool), value没有要求
-var dict = ["name":"hjq","age":25.5] as Any
-print(dict)
+var dict01 = ["name":"hjq","age":25.5] as [String : Any]
+print(dict01)
 
 //var dict1:Dictionary = ["name":"hjq","age":25.5] 废弃
 
-var dict2:Dictionary<String,AnyObject> = ["name":"jq" as AnyObject,"age":25.5 as AnyObject]
-print(dict2)
+var dict02 : Dictionary<String, AnyObject> = ["name":"jq" as AnyObject,"age":25.5 as AnyObject]
+print(dict02)
 
 //var dict3:Dictionary<String:AnyObject> = ["name":"jq","age":34]  废弃
 
 var dict4:[String:AnyObject] = ["name":"hjq" as AnyObject ,"age":30 as AnyObject ]
 print(dict4)
 
-//var dict5:[String:AnyObject] = Dictionary(dictionaryLiteral: ("name","hjq"),("age",28))
-//print(dict5)  废弃
+var dict5:[String:Any] = Dictionary(dictionaryLiteral: ("name","hjq"),("age",28))
+print(dict5)
 
 //3.0
 //1.字典的定义使用[key:value,key:value]快速定义

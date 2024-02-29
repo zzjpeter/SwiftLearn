@@ -45,13 +45,13 @@ var strongP2 = strongP //2
 //1.弱引用, 引用计数不变;
 //2.如果利用weak修饰变量, 当对象释放后会自动将变量设置为nil;
 //3.所以利用weak修饰的变量必定是一个可选类型, 因为只有可选类型才能设置为nil.
-weak var weakP:Person2? = Person2(name: "hjq")
-if let p = weakP{
+weak var weakP : Person2? = Person2(name: "hjq")
+if let p = weakP {
     print(p)
-}else{
+} else {
     print(weakP as Any)
 }
-
+print("zhuzj")
 /*
  unowned无主引用, 相当于OC unsafe_unretained
  unowned和weak的区别:
@@ -83,7 +83,7 @@ unowned var weakP3:Person3 = Person3(name: "hjq")
 //例1:
 class Apartment {
     let number:Int      //房间号
-    var tenant:Person4? //租客
+    weak var tenant:Person4? //租客
     init(number:Int) {
         self.number = number
     }
@@ -94,7 +94,7 @@ class Apartment {
 
 class Person4 {
     let name:String
-    weak var apartment: Apartment? //公寓
+    var apartment: Apartment? //公寓
     init(name:String) {
         self.name = name
     }

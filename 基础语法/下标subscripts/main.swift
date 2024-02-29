@@ -11,7 +11,7 @@ import Foundation
 /*
  subscripts(下标): 访问对象中数据的快捷方式
  所谓下标脚本语法就是能够通过, 实例[索引值]来访问实例中的数据
- 类似于以前我们访问数字和字典, 其实Swift中的数组和字典就是一个结构体
+ 类似于以前我们访问数组和字典, 其实Swift中的数组和字典就是一个结构体
  
  Array:      subscript (index: Int) -> T
  Dictionary: subscript (key: Key) -> Value?

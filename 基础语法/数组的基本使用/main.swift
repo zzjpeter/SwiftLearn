@@ -193,8 +193,13 @@ print(range) // 通过答应也可以推断出类型
 //var range3:Range<Int> = Range(start: 0, end: 5)
 //var range4:Range<Int> = 0..<5
 
+var aa = 0
+var bb = 20
+var range5 = aa...bb
+
 //print(range3)
 //print(range4)
+print(range5) //0...20
 
 
 

@@ -62,7 +62,7 @@ class Person4 {
     var age: Int = 20
 }
 let p4:Person4 = Person4()
-// 可以修改类中常量中的值, 因为他们指向的对象不是一个常量
+// 可以修改类常量中的值, 因为他们指向的对象不是一个常量
 p4.name = "hello xiaohange"
 // 不可以修改类常量的指向
 //p4 = Person4()  Error!
@@ -90,6 +90,7 @@ class Line {
         print("懒加载")
         
         var arrrM:Array<Int> = []
+        arrrM.append(Int(self.end - self.start))
 //        return self.end - self.start   Error!
         return arrrM as [AnyObject]
     }()
@@ -108,7 +109,7 @@ print(line.length)
 var arrM = line.container
 arrM.append("1" as AnyObject)
 arrM.append(5 as AnyObject)
-print(arrM)    // [1, 2, 3, 1, 5]
+print(arrM)    // [200, 1, 5]
 
 
 /*
@@ -125,7 +126,7 @@ struct Rect {
     var size:(w: Double, h: Double) = (0, 0)
     
     // 由于center的值是通过起点和宽高计算出来的, 所以没有必要提供一个存储属性
-    var center:(x: Double, y:Double){
+    var center:(x: Double, y:Double) {
         
         get{
             return (origion.x + size.w/2, origion.y + size.h/2)
@@ -204,7 +205,7 @@ l.start = 10.0
 struct Person5 {
     //普通的属性是每个对象的一份
     var name: String = "hjq"
-    //类属性是素有对象共用一份
+    //类属性是所有对象共用一份
     static var gender: String = "Man"
     static var age: Int{
         return 25

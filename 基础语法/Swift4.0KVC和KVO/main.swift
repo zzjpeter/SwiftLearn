@@ -18,18 +18,18 @@ import Foundation
  struct 也支持 KVC
  */
 
-/*
+
 struct ValueType {
     var name:String
 }
 var object = ValueType(name: "小韩哥")
-let name =  \ValueType.name
+let name = \ValueType.name
 
 //set
 object[keyPath: name] = "Swift4"
 //get
 let valueOfName = object[keyPath:name]
-*/
+print(valueOfName)
 
 
 
@@ -38,9 +38,9 @@ let valueOfName = object[keyPath:name]
  */
 //注意:被观察的属性需要用dynamic修饰，否则也无法观察到。
 //一个好消息是不需要在对象被回收时手动 remove observer。但是这也带来了另外一个容易被忽略的事情：观察的闭包没有被强引用，需要我们自己添加引用，否则当前函数离开后这个观察闭包就会被回收了。
-/*
+
 class OCClass: NSObject {
-    dynamic var name:String
+    @objc dynamic var name:String
     init(name : String) {
         self.name = name
     }
@@ -49,7 +49,7 @@ class OCClass: NSObject {
 
 func TestKVO() {
     var swiftClass : OCClass!
-    var ob: NSKeyValueOperator!
+    var ob: NSKeyValueObservation!
     
     swiftClass = OCClass(name: "OC")
     ob = swiftClass.observe(\.name){
@@ -58,10 +58,10 @@ func TestKVO() {
          new = ob.name
         print(new)
     }
-    swiftClass.name = "Swift4"
+    swiftClass.name = "Swift4.0"
 }
 TestKVO()
-*/
+
 
 
 

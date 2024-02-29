@@ -36,7 +36,7 @@ say("HaRi")
 
 // 没有返回值写法
 let say2:(String) -> Void = {
-    (name: String) -> Void in
+    (name: String) in
     print("hi \(name)")
 }
 say2("HaRi")

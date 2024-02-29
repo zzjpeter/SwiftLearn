@@ -74,7 +74,7 @@ func joinString3(s1:String ,toString s2:String, jioner:String = "默认值") -> 
 print(joinString3(s1: "hi", toString: "xiaohange" ,jioner: "❤️"))
 
 //在其它语言中默认参数智能出现在参数列表的最后面, 但是在Swift中可以出现在任何位置
-func joinString4(s1:String ,jioner:String ,toString s2:String) -> String
+func joinString4(s1:String ,jioner:String = "默认值" ,toString s2:String) -> String
 {
     return s1 + jioner + s2
 }

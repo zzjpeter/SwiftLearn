@@ -116,8 +116,14 @@ func bubbleSort(array:inout [Int])
 //                let temp = array[j]
 //                array[j] = array[j + 1]
 //                array[j + 1] = temp
-                swap(a: &array[j], b: &array[j + 1])
                 
+                array.swapAt(j, j + 1)
+                
+//                var first = array[j]
+//                var second = array[j + 1]
+//                swap(a: &first, b: &second)
+//                array[j] = first
+//                array[j + 1] = second
             }
         }
     }
@@ -131,7 +137,7 @@ showArray(array: arr)
 var arr1:Array<Int> = [10, 34, 23, 9, 12]
 for i in (0..<arr1.count) {
     
-    var key = arr1[i]
+    let key = arr1[i]
     
     var j = i - 1
     
@@ -187,13 +193,13 @@ func partition( list:inout [Int],left:Int,right:Int) -> Int{
             pivot_index += 1
             
             if pivot_index != i {
-                
-                swap(&list[pivot_index], &list[i])
-                
+//                swap(&list[pivot_index], &list[i])
+                list.swapAt(pivot_index, i)
             }
         }
      }
-    swap(&list[left], &list[pivot_index])
+//    swap(&list[left], &list[pivot_index])
+    list.swapAt(left, pivot_index)
     return pivot_index
 }
 func quickSortArray( list:inout [Int],left:Int,right:Int) -> Void{

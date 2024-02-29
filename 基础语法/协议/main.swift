@@ -18,16 +18,16 @@ protocol SomeProtocol {
 }
 
 //协议可以继承一个或者多个协议
-protocol SomeProtocol2:SomeProtocol {
+protocol SomeProtocol2 : SomeProtocol {
     //协议定义
 }
 
 //结构体实现协议
-struct SomeStrure : SomeProtocol,SomeProtocol2 {
+struct SomeStrure : SomeProtocol, SomeProtocol2 {
     //结构体定义
 }
 
-//类实现协议和继承父类, 协议一般卸载父类后面
+//类实现协议和继承父类, 协议一般写在父类后面
 class SomeSuperclass {
     //父类定义
 }
@@ -109,10 +109,10 @@ var tcp = TcpClass(aprot: 20)
 print(tcp.aprot)
 
 
-// 例子: 举个简单的例子，有一只猫和狗，他们都属于宠物，用类去实现就要这样操作，定义一个父类叫做宠物，里面有喂食和玩耍两个方法，猫和狗都继承与宠物这个父类。这样操作自然可以实现，但是要知道，猫和狗不都是宠物，这里把宠物定义成父类就不是很合适，这里应该把宠物定义成协议就相对合适很多啦
+// 例子: 举个简单的例子，有一只猫和狗，他们都属于宠物，用类去实现就要这样操作，定义一个父类叫做宠物，里面有喂食和玩耍两个方法，猫和狗都继承于宠物这个父类。这样操作自然可以实现，但是要知道，猫和狗不都是宠物，这里把宠物定义成父类就不是很合适，这里应该把宠物定义成协议就相对合适很多啦
 
 //// 5.使用实例
-// 宠物猫和宠物狗的例子，利用协议可以这样实现，声名个动物的父类，然后让猫和狗class都继承与动物class。在定义一个宠物的属性，里面有玩耍和喂食两个方法，让猫和狗都继承与宠物协议，实现代码如下：
+// 宠物猫和宠物狗的例子，利用协议可以这样实现，声名个动物的父类，然后让猫和狗class都继承于动物class。再定义一个宠物的属性，里面有玩耍和喂食两个方法，让猫和狗都继承于宠物协议，实现代码如下：
 
 protocol Pet {
     func payWith()
@@ -186,7 +186,7 @@ cat.fed(food: "鱼")
 //let runDistance:Length = 3.14.km // 3140
 
 //2.typealias结合协议使用
-//定义一个协议, 代表重量, 但是它的类型要根据继承与它的类或结构体定义, 协议代码如下:
+//定义一个协议, 代表重量, 但是它的类型要根据继承于它的类或结构体定义, 协议代码如下:
 
 protocol WeightCalculble {
     
@@ -250,9 +250,9 @@ class Person:Equatable , Comparable, CustomStringConvertible {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <(lhs: Person, rhs: Person) -> Bool {
-        return false
-    }
+//    static func <(lhs: Person, rhs: Person) -> Bool {
+//        return false
+//    }
     
     var name:String
     var age:Int
@@ -273,8 +273,8 @@ func ==(left: Person, right: Person) ->Bool {
 
 let personA = Person(name: "a", age: 10)
 let personB = Person(name: "b", age: 20)
-personA == personB
-personA != personB
+print(personA == personB)
+print(personA != personB)
 //注意：func == 方法要紧跟协议下面写，否则编译器会报错
 
 
@@ -296,11 +296,12 @@ let person3 = Person(name:"a",age:11)
 var  arrPerson = [person1,person2,person3]
 
 arrPerson.sort()  //此时arrPerson ： [person1,person3,person2]
-
+print(arrPerson)
+print("zhuzj")
 
 // 3.CustomStringConvertible协议用于自定义打印
 
-class PersonClass2:CustomStringConvertible {
+class PersonClass2 : CustomStringConvertible {
     /// Returns a Boolean value indicating whether two values are equal.
     ///
     /// Equality is the inverse of inequality. For any values `a` and `b`,
@@ -322,7 +323,7 @@ class PersonClass2:CustomStringConvertible {
     }
     var description: String {
         
-        return"name: "+name + ",age:" + String(age)
+        return"name: " + name + ",age:" + String(age)
     }
 }
 //重写description 讲自定义打印格式return出来
@@ -347,13 +348,13 @@ extension ShareString {
         print("------")
     }
 }
-extension String:ShareString {
+extension String : ShareString {
     func methodForOverride() {
         print(self)
     }
 }
 
-let hello:ShareString = "hello"
+let hello : ShareString = "hello"
 hello.methodForOverride()
 hello.methodWithoutOverride()
 

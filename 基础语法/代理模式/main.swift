@@ -9,12 +9,12 @@
 import Foundation
 
 /*
- Swfit3.0中代理的使用方法:
+ Swift3.0中代理的使用方法:
  */
 
 //// 一.视图界面中
 
-// 1.制订协议(不谢NSObjectProtocol暂时不会报错, 但是写属性是无法写weak)
+// 1.制订协议(不写NSObjectProtocol暂时不会报错, 但是写属性是无法写weak)
 protocol DelegateName : NSObjectProtocol {
     //设置协议方法
     func method()
@@ -50,7 +50,7 @@ class ViewController : UIViewController, DelegateName { // 1.遵守协议
 
 // MARK: 例子: 购票
 
-protocol BuyTicketDelegate : class {
+protocol BuyTicketDelegate : AnyObject {
     func buyTicket()
 }
 

@@ -44,7 +44,7 @@ if let b = opb{
 
 
 //Swift中的可选类型变量更贴近于OC中的普通变量
-//NSData *data = [NSData .dataWithContentsOfMappedFile:@"/Users/hanjunqiang/Desktop/StudyEveryDay/H5/第一阶段/小说.html"];
+//NSData *data = [NSData dataWithContentsOfMappedFile:@"/Users/hanjunqiang/Desktop/StudyEveryDay/H5/第一阶段/小说.html"];
 //NSLog("%@", data);
 
 var data:NSData? = NSData(contentsOfFile: "/Users/hanjunqiang/Desktop/StudyEveryDay/H5/第一阶段/小说.html") //测试地址, 换成你自己路径地址文件即可
@@ -96,14 +96,14 @@ p0?.name = "hi, HaRi"
 var str:String? = p0?.whoMan()
 
 //可选链的返回值会自动包装成一个可选值
-//因为可选链可能失效, 所以返回值可能有值也可能没值, 想要表达有值或者没有纸只能用可选值, 所以返回值会自动包装成一个可选值
+//因为可选链可能失效, 所以返回值可能有值也可能没值, 想要表达有值或者没有值只能用可选值, 所以返回值会自动包装成一个可选值
 print(p0?.name as Any)
 print(p0?.whoMan() as Any)
 print(p1.name)
 var a:String? = p0?.name
 p0?.name = "haha"
 var b:String? = p1.name
-
+print("zhuzj")
 
 /*
  可选链调用下标引索:
@@ -163,8 +163,10 @@ print(stu?["chinese"] as Any)
 //如果赋值成功会返回一个可选类型, 返回()?也就是Void? 代表成功, 返回nil代表失败
 //let res1: = stu?.name = "xiaohange"
 //let res1: ()? = stu?.name = "xiaohange"
-//let res1: Void? = stu?.name = "xiaohange"
-//print(res1)
+let res1: Void? = stu?.name = "xiaohange"
+print(res1 as Any)
+
+print("zhuzj")
 
 stu = nil
 let res: Void? = stu?.name = "HaRi"

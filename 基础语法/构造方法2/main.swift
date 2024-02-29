@@ -62,7 +62,7 @@ class Man {
     {
         self.name = name
     }
-    convenience init(){
+    convenience init() {
         self.init(name: "hjq")
     }
 }
@@ -87,7 +87,7 @@ class SuperMan: Man {
  1.指定构造器必须调用其直接父类的"指定构造器"
  2.便利构造器必须调用同类中的其他便利构造器(指定或者便利)
  3.便利构造器必须最终调用一个指定构造器结束(无论指定还是便利, 最终肯定调用一个指定构造器)
- 4.指定构造器总是横向代理(父类)
+ 4.指定构造器总是纵向代理(父类)
  5.便利构造器总是横向代理(子类)
  */
 
@@ -163,6 +163,7 @@ class SuperMan3: Man3 {
 //        if age > 30 {
 //            self.name = "hjq"
 //        }
+        print("zhuzj \(self.age)")
         //对父类引入的属性进行初始化
         super.init(name: "han")
         
@@ -206,11 +207,14 @@ class SuperMan4: Man4 {
     
     //将父类的指定构造器重写成一个便利构造器, 必须加上override关键字, 表示重写父类方法
     convenience override init(name: String) {
-        self.init(name: name)
+        self.init()
+        self.name = name;
         self.age = 50
     }
 }
 
+var man4 = SuperMan4(name: "zhuzj")
+print("zhuzj \(man4.name)")
 
 /** 便利构造方法不存在重写 **/
 class Man5 {
@@ -245,8 +249,8 @@ print("name = \(sm.name)  age = \(sm.age)")
 /*
  构造方法的自动继承:
  1.如果子类中没有定义构造器, 且子类所有的存储属性都有缺省值, 会继承父类中所有的构造方法(包括便利构造器);
- 2.如果子类中只是重写所有的指定构造器, 不管子类中的存储属性是否有缺省值, 都不会继承父类的其他构造方法;
- 3.如果子类重写了父类中的指定构造器, 不管子类中的存储属性是否有缺省值, 都会同时继承父类中的所有便利方法.
+ 2.如果子类中只是重写了父类中的某些指定构造器, 不管子类中的存储属性是否有缺省值, 都不会继承父类中的其它构造方法
+ 3.如果子类重写了父类中所有的指定构造器, 不管子类中的存储属性是否有缺省值, 都会同时继承父类中的所有便利方法
  */
 class Person6 {
     var name:String
