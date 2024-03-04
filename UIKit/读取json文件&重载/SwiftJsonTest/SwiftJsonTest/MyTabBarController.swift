@@ -102,7 +102,7 @@ class MyTabBarController: UITabBarController {
         let childNav = UINavigationController(rootViewController: childVC)
         
         // 7.添加控制器
-        addChildViewController(childNav)
+        addChild(childNav)
         
     }
     
