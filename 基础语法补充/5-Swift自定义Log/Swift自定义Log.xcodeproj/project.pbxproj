@@ -193,7 +193,7 @@
 				TargetAttributes = {
 					4790463E1F32FC3A0012DC0F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = WTB2BKP7UZ;
+						DevelopmentTeam = KLZ6FTC7C7;
 						ProvisioningStyle = Automatic;
 					};
 					479046521F32FC3A0012DC0F = {
@@ -215,6 +215,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -417,13 +418,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = "Swift自定义Log/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HanJunqiang.Swift---Log";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.WeMeetSDKSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "-D DEBUG";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -431,12 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = "Swift自定义Log/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HanJunqiang.Swift---Log";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.WeMeetSDKSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
