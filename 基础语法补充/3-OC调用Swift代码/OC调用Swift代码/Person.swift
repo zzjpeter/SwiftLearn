@@ -2,12 +2,20 @@
 //  Person.swift
 //  OC调用Swift代码
 //
-//  Created by 韩俊强 on 2017/7/13.
-//  Copyright © 2017年 HaRi. All rights reserved.
+//  Created by 朱志佳 on 2024/3/4.
 //
 
-import UIKit
+import Foundation
 
-open class Person: NSObject {
-    open var name : String = ""
+
+@objc public class Person: NSObject {
+    @objc var name: String
+
+    @objc init(name: String) {
+        self.name = name
+    }
+
+    @objc func greet() {
+        print("Hello, my name is \(name).")
+    }
 }
