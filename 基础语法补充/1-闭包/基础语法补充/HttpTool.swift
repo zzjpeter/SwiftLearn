@@ -26,6 +26,8 @@ class HttpTool: NSObject {
                 print("回到主线程, 将数据回调出去")
                 finished(json)
             }
+            
+            print("loadData exec finished")
         }
     }
 }

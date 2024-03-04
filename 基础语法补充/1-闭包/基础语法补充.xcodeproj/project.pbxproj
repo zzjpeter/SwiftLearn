@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					47D421501F170B0D005DEFF0 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = WTB2BKP7UZ;
+						DevelopmentTeam = KLZ6FTC7C7;
 						ProvisioningStyle = Automatic;
 					};
 					47D421641F170B0D005DEFF0 = {
@@ -218,6 +218,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -421,12 +422,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = "基础语法补充/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HanJunqiang.------";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.WeMeetSDKSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -434,12 +435,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = "基础语法补充/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HanJunqiang.------";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.WeMeetSDKSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -520,6 +521,7 @@
 				47D4217B1F170B0D005DEFF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47D4217C1F170B0D005DEFF0 /* Build configuration list for PBXNativeTarget "基础语法补充Tests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +530,7 @@
 				47D4217E1F170B0D005DEFF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47D4217F1F170B0D005DEFF0 /* Build configuration list for PBXNativeTarget "基础语法补充UITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +539,7 @@
 				47D421811F170B0D005DEFF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
