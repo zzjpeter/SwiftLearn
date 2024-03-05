@@ -26,10 +26,7 @@ class ViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItems = [saveItem, readItem, deleteItem]
     }
-
-    func saveAction() {
-        saveInfo(textField.text!)
-    }
+    
     override func loadView() {
         super.loadView()
         self.view.backgroundColor = UIColor.white
@@ -48,8 +45,12 @@ class ViewController: UIViewController {
     }
     
     // MARK - 保存
+    @objc func saveAction() {
+        saveInfo(textField.text!)
+    }
+    
     func saveInfo(_ name : String) {
-        if 0 <= name.characters.count {
+        if 0 <= name.count {
             // 1.获取沙盒路径
             let home = NSHomeDirectory() as NSString
             // 2.拼接路径
@@ -84,7 +85,7 @@ class ViewController: UIViewController {
     }
     
     // MARK - 读取
-    func readinfo() -> String {
+    @objc func readinfo() -> String {
         // 数组
         let array = NSArray(contentsOfFile: filePathPlist)
         let text = array?.lastObject
@@ -100,7 +101,7 @@ class ViewController: UIViewController {
        return ""
     }
     
-    func deleteInfo() {
+    @objc func deleteInfo() {
         let array = NSArray(contentsOfFile: filePathPlist) as! NSMutableArray
         array.removeAllObjects()
         let isSuccess = array.write(toFile: filePathPlist, atomically: true)
