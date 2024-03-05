@@ -20,17 +20,17 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
         self.title = "其他参考Alamofire,这里只讲代理方法"
         
         let btn = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        btn.setTitle("请求", for: UIControlState.normal)
+        btn.setTitle("请求", for: UIControl.State.normal)
         btn.backgroundColor = UIColor.green
-        btn.setTitleColor(UIColor.red, for: UIControlState.normal)
+        btn.setTitleColor(UIColor.red, for: UIControl.State.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        btn.addTarget(self, action: #selector(starRequest), for: UIControlEvents.touchUpInside)
+        btn.addTarget(self, action: #selector(starRequest), for: UIControl.Event.touchUpInside)
         self.view.addSubview(btn)
         
     }
     
     // MARK: - 代理
-    func starRequest() {
+    @objc func starRequest() {
         // URL
         let url = URL(string:"http://rapapi.org/mockjsdata/25204/getWithParams?userName='xiaohange'&userPassword='88995'")!
         
@@ -92,8 +92,8 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
                 dict = try JSONSerialization.jsonObject(with: self.data! as Data, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary
                 DispatchQueue.main.async(execute:{ () -> Void in
                     let msg:String = dict!.object(forKey: "msg") as! String
-                    let alertVC = UIAlertController(title: nil, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-                    let action = UIAlertAction(title: "ok", style: UIAlertActionStyle.cancel, handler: nil)
+                    let alertVC = UIAlertController(title: nil, message: msg, preferredStyle: UIAlertController.Style.alert)
+                    let action = UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel, handler: nil)
                     alertVC.addAction(action)
                     self.present(alertVC, animated: true, completion: nil)
                 })

@@ -60,7 +60,7 @@ class AlamofireViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - GET
     func requestWithGet() {
-        Alamofire.request("http://rapapi.org/mockjsdata/25204/get").responseJSON { (response) in
+        AF.request("http://rapapi.org/mockjsdata/25204/get").responseJSON { (response) in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)")
             }
