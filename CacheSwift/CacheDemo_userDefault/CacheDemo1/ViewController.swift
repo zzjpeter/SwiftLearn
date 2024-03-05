@@ -19,8 +19,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
         let saveItem = UIBarButtonItem(title: "save", style: .done, target: self, action: #selector(save))
         let readItem = UIBarButtonItem(title: "read", style: .done, target: self, action: #selector(ViewController.readInfo))
         let deleteItem = UIBarButtonItem(title: "del", style: .done, target: self, action: #selector(ViewController.deleteInfo))
+        let testItem = UIBarButtonItem(title: "zhuzj", style: .done, target: self, action: Selector("test"))
         
-        self.navigationItem.rightBarButtonItems = [saveItem, readItem, deleteItem]
+        self.navigationItem.rightBarButtonItems = [saveItem, readItem, deleteItem, testItem]
         
         setupUI()
         
@@ -41,7 +42,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     // MARK: - 保存
     func saveInfo(_ name : String){
-        if 0 <= name.characters.count  {
+        if 0 <= name.count  {
             let userDefault = UserDefaults.standard
             userDefault.set(name, forKey: "name")
             userDefault.synchronize()
@@ -54,7 +55,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     // MARK: - 读取
-    func readInfo() -> String {
+    @objc func readInfo() -> String {
         let userDefault = UserDefaults.standard
         let name = userDefault.object(forKey: "name") as? String
         
@@ -70,7 +71,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     // MARK: - 删除
-    func deleteInfo() {
+    @objc func deleteInfo() {
         let userDefault = UserDefaults.standard
         userDefault.removeObject(forKey: "name")
         
@@ -91,8 +92,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
         textFiled.layer.borderWidth = 1.0
     }
     
-    func save() {
+    @objc func save() {
         self.saveInfo(textFiled.text!)
+    }
+    
+    @objc func test() {
+        print("zhuzj")
     }
 
 }
