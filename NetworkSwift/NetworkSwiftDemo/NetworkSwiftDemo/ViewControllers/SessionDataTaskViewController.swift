@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
+class SessionDataTaskViewController: UIViewController, URLSessionDataDelegate {
 
     var data:NSMutableData!
     
@@ -32,7 +32,7 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
     // MARK: - 代理
     @objc func starRequest() {
         // URL
-        let url = URL(string:"http://rapapi.org/mockjsdata/25204/getWithParams?userName='xiaohange'&userPassword='88995'")!
+        let url = URL(string:"https://www.baidu.com")!
         
         // URLRquest
         let request = URLRequest(url: url)
@@ -54,7 +54,7 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
     }
     
     // MARK: - 接收到服务器响应的时候调用该方法
-    func URLSession(_ session: Foundation.URLSession, dataTask: URLSessionDataTask, didReceiveResponse response: URLResponse, completionHandler: (Foundation.URLSession.ResponseDisposition) -> Void) {
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         
         // 响应头信息，即response
         print("didReceiveResponse--%@", response)
@@ -69,10 +69,9 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
          */
         completionHandler(Foundation.URLSession.ResponseDisposition.allow)
     }
-
     
     // MARK: - 接收到服务器返回数据的时候会调用该方法, 如果数据较大那么该方法可能会调用多次
-    func URLSession(_ session: Foundation.URLSession, dataTask: URLSessionDataTask, didReceiveData data: Data) {
+    func urlSession(_ session: Foundation.URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         
         print("didReceiveData--%@", data)
         // 拼接服务器返回的数据
@@ -83,8 +82,7 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
     }
     
     // 当请求完成(成功|失败)的时候会调用该方法，如果请求失败，则error有值
-    func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, didCompleteWithError error: NSError?) {
-        
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if (error == nil)
         {
             var dict:NSDictionary? = nil
@@ -97,7 +95,9 @@ class SessionDataTaskViewController: UIViewController, URLSessionDelegate {
                     alertVC.addAction(action)
                     self.present(alertVC, animated: true, completion: nil)
                 })
-            } catch { }
+            } catch {
+                print("不是字典")
+            }
         }
     }
 
