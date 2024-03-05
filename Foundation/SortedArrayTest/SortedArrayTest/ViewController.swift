@@ -158,19 +158,19 @@ class ViewController: UIViewController {
     }
     
     func testIndexOfReturnsNilWhenNotFound() {
-        let sut = SortedArray(unsorted: "Hello World".characters)
+        let sut = SortedArray(unsorted: "Hello World")
         let index = sut.index(of: "h")
         print(index as Any)
     }
     
     func testIndexOfReturnsFirstMatchForDuplicates() {
-        let sut = SortedArray(unsorted: "abcabcabc".characters)
+        let sut = SortedArray(unsorted: "abcabcabc")
         let index = sut.index(of: "c")
         print(index as Any) //6
     }
     
     func testsContains() {
-        let sut = SortedArray(unsorted: "Lorem ipsum".characters)
+        let sut = SortedArray(unsorted: "Lorem ipsum")
         print(sut.contains(" "))
         print(sut.contains("a"))
     }

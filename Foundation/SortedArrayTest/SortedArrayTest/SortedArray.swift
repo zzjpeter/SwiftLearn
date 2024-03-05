@@ -158,9 +158,9 @@ extension SortedArray {
     ///   bounds of the range must be valid indices of the array.
     ///
     /// - Complexity: O(_n_), where _n_ is the length of the array.
-    public mutating func removeSubrange(_ bounds: CountableRange<Int>) {
-        _elements.removeSubrange(bounds)
-    }
+//    public mutating func removeSubrange(_ bounds: CountableRange<Int>) {
+//        _elements.removeSubrange(bounds)
+//    }
 
     /// Removes the elements in the specified subrange from the array.
     ///
@@ -168,9 +168,9 @@ extension SortedArray {
     ///   bounds of the range must be valid indices of the array.
     ///
     /// - Complexity: O(_n_), where _n_ is the length of the array.
-    public mutating func removeSubrange(_ bounds: CountableClosedRange<Int>) {
-        _elements.removeSubrange(bounds)
-    }
+//    public mutating func removeSubrange(_ bounds: CountableClosedRange<Int>) {
+//        _elements.removeSubrange(bounds)
+//    }
 
     /// Removes the specified number of elements from the beginning of the
     /// array.
